@@ -1,10 +1,10 @@
 import React from 'react';
-
+import SearchPlants from './components/plants/searchPlants';
 
 function App() {
   return (
     <div className="App">
-      Test
+      <SearchPlants />
     </div>
   );
 }
