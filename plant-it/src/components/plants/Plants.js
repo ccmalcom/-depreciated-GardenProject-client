@@ -29,7 +29,7 @@ const Plants = (props) => {
         {!createPlant ? <Button onClick={buttonHandler}>Plant It!</Button> : null}
     </> 
 
-    //left out table above in div (not displaying all plants in one table, correct? Can change quickly if needed - SC)
+    //!!! Need to add table above to display plants. Style components or bootstrap table --SC
 }
 
 export default Plants;

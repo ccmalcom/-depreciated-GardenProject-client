@@ -4,7 +4,7 @@ import SearchPlants from './components/plants/searchPlants';
 function App() {
   return (
     <div className="App">
-      <SearchPlants />
+      <p>App Test</p>
     </div>
   );
 }

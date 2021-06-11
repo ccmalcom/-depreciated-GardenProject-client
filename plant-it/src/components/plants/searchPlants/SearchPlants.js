@@ -19,7 +19,6 @@ export default function = openDialog() {
     const SearchPlants () => {
         setDialogValue({
             plantName: '',
-            annual: '', //option between annual perennial?
             typeOfPlant: '',
             lightingNeeds: '',
             waterNeeds: '',
