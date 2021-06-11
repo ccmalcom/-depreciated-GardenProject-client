@@ -1,11 +1,10 @@
 import { formatMs, FormGroup } from '@material-ui/core';
 import React, { useState } from 'react';
 import './CreatePlant.css';
+import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
 const CreatePlant = (props) => {
     const [plantName, setPlantName] = useState('');
-    const [perennial, setPerennial] = useState(false);
-    const [annual, setAnnual] = useState(false);
     const [typeOfPlant, setTypeOfPlant] = useState('');
     const [lightingNeeds, setLightingNeeds] = useState('');
     const [waterNeeds, setWaterNeeds] = useState('');
@@ -22,8 +21,6 @@ const CreatePlant = (props) => {
             method: 'POST',
             body: JSON.stringify({
                 plantName: plantName,
-                perennial: perennial,
-                annual: annual,
                 typeOfPlant: typeOfPlant,
                 lightingNeeds: lightingNeeds,
                 waterNeeds: waterNeeds,
@@ -43,19 +40,13 @@ const CreatePlant = (props) => {
     }
 
     return (
+
+        //! We can change this table to use something other than reactstrap 
         <div>
             <Form onSubmit={postPlant}>
                 <FormGroup>
                     <Label>Plant Name</Label>
                     <Input type='text' value={plantName} placeholder='Lavender' onChange={(e) => setPlantName(e.target.value)}/>
-                </FormGroup>
-                <FormGroup>
-                    <Label>Perennial</Label>
-                    <Input type='checkbox' value={perennial} onChange={(e) => setPerennial(e.target.value)}/>
-                </FormGroup>
-                <FormGroup>
-                    <Label>Annual</Label>
-                    <Input type='checkbox' value={annual} onChange={(e) => setAnnual(e.target.value)}/>
                 </FormGroup>
                 <FormGroup>
                     <Label>Type of Plant</Label>
@@ -77,7 +68,7 @@ const CreatePlant = (props) => {
                     <Label>Notes</Label>
                     <Input type='text' value={notes} placeholder='Part of the mint family; smells wonderful!' onChange={(e) => setNotes(e.target.value)} />
                 </FormGroup>
-                <Buton type='submit'>Plant it!</Buton>
+                <Button type='submit'>Plant it!</Button>
             </Form>
         </div>
     )
