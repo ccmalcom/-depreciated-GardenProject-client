@@ -31,7 +31,7 @@ header{
 .App {
   height: 100vh;
   /* width: 150vw; */
-  overflow: hidden;
+  overflow: auto;
   background-color: rgb(132, 205, 230);
 }
 /*Auth*/

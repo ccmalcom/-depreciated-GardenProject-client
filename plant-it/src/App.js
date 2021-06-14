@@ -38,6 +38,7 @@ function App() {
       <Header />
       <br></br>
       <Footer /> */}
+      <Auth updateToken={updateToken}/>
       <PlantsIndex />
     </div>
   );
