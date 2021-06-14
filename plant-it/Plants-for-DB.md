@@ -30,7 +30,7 @@
         "lightingNeeds": "Full sun (6-8 hours)",
         "waterNeeds": "Keep soil moist",
         "fertilizerNeeds": "When transplanted and then every 3-4 weeks",
-        "notes": "Havest in 60 days",
+        "notes": "Harvest in 60 days",
 
     }
 }
