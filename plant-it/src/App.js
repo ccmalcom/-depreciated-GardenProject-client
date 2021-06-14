@@ -9,8 +9,9 @@ import SearchBar from './components/searchBar/SearchBar';
 import SearchPlants from './components/searchBar/Search';
 
 import Home from './site/Home';
-=======
+
 import PlantsIndex from './components/plants/PlantsIndex';
+// import GardenIndex from './components/gardens/GardenIndex'
 
 
 function App() {
@@ -44,7 +45,7 @@ function App() {
       {/* <Footer /> */}
       
       {/* <Login /> */}
-=======
+
       {/* <Sitebar />
       <br></br>
       <Login />
@@ -59,6 +60,10 @@ function App() {
       <Footer /> */}
       <Auth updateToken={updateToken}/>
       <PlantsIndex />
+
+      {/* <GardenIndex /> */}
+
+
 
 
     </div>
