@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Table, Button} from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // import './Plant.css'
 
 const DisplayPlants = (props) => {
@@ -21,16 +21,18 @@ const DisplayPlants = (props) => {
         })
         .then((res) => res.json())
         .then((gardenPlantData =>{
-            console.log(gardenPlantData);
-            setPlantName('');
-            setTypeOfPlant('');
-            setLightingNeeds('');
-            setWaterNeeds('');
-            setFertilizerNeeds('');
-            setNotes('');
+            setPlantName(plant.plantName);
+            setTypeOfPlant(plant.typeOfPlant);
+            setLightingNeeds(plant.lightingNeeds);
+            setWaterNeeds(plant.waterNeeds);
+            setFertilizerNeeds(plant.fertilizerNeeds);
+            setNotes(plant.notes);
+            console.log(`Plant: ${plantName}, type: ${typeOfPlant}, lighting: ${lightingNeeds}, water: ${waterNeeds}, fertilizer: ${fertilizerNeeds}, notes: ${notes}`);
         }))
     }
     console.log(`Props: ${props.plants}`);
+
+
 
     const plantMapper = () =>{
         return props.plants.map((plant, index) =>{
@@ -42,7 +44,7 @@ const DisplayPlants = (props) => {
                 <td>{plant.waterNeeds}</td>
                 <td>{plant.fertilizerNeeds}</td>
                 <td>
-                    <button>MyGarden <b>+</b></button>
+                    <button onClick={()=>{AddToGarden(plant)}}>MyGarden <b>+</b></button>
                     <button>View</button>
                 </td>
             </tr>
