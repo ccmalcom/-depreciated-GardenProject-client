@@ -57,6 +57,7 @@ function App() {
   
 
       <Footer /> */}
+      <Auth updateToken={updateToken}/>
       <PlantsIndex />
 
 
