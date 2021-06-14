@@ -6,7 +6,6 @@ import Login from '../src/components/auth/Login';
 //import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
 
-
 function App() {
   return (
     <div className="App">
