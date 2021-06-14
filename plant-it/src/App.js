@@ -9,7 +9,6 @@ import SearchBar from './components/searchBar/SearchBar';
 import SearchPlants from './components/searchBar/Search';
 
 import Home from './site/Home';
-=======
 import PlantsIndex from './components/plants/PlantsIndex';
 
 
@@ -44,7 +43,7 @@ function App() {
       {/* <Footer /> */}
       
       {/* <Login /> */}
-=======
+
       {/* <Sitebar />
       <br></br>
       <Login />
