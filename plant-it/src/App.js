@@ -1,5 +1,4 @@
 import React from 'react';
-import SearchPlants from './components/plants/searchPlants';
 
 function App() {
   return (

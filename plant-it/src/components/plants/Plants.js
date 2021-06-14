@@ -23,7 +23,8 @@ const Plants = (props) => {
 
     const buttonHandler = () => setCreatePlant(true);
 
-
+    //MAIN GARDEN
+    
     <>
         {createPlant ? <CreatePlant setCreatePlant={setCreatePlant} sessionToken={props.sessionToken}/> : null}
         {!createPlant ? <Button onClick={buttonHandler}>Plant It!</Button> : null}
