@@ -9,7 +9,7 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('/', {
+        fetch('http://wd85-plant-it.herokuapp.com/user/login', {
             method: 'POST',
             body: JSON.stringify(
                 {user:{emailAddress: emailAddress, password: password}}

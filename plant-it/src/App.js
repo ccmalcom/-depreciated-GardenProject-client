@@ -9,7 +9,12 @@ import SearchBar from './components/searchBar/SearchBar';
 import SearchPlants from './components/searchBar/Search';
 
 import Home from './site/Home';
+<<<<<<< HEAD
+=======
+
+>>>>>>> a33dd18d3b473a0452cfdc8d15154a93e30e9335
 import PlantsIndex from './components/plants/PlantsIndex';
+// import GardenIndex from './components/gardens/GardenIndex'
 
 
 function App() {
@@ -56,7 +61,12 @@ function App() {
   
 
       <Footer /> */}
+      <Auth updateToken={updateToken}/>
       <PlantsIndex />
+
+      {/* <GardenIndex /> */}
+
+
 
 
     </div>
