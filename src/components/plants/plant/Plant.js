@@ -1,8 +1,9 @@
 import React from 'react';
-import './Plant.css'
+import './plant.css'
 
 const DisplayPlants = (props) => {
     console.log(`Props: ${props.plant}`);
+
     return (
 
         //! again, we can style this table or display it another way -SC
