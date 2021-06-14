@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-//import Register from './Register';
+import Register from './Register';
 import Login from './Login';
 
 

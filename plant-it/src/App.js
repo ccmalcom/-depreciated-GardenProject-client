@@ -11,8 +11,10 @@ import SearchPlants from './components/searchBar/Search';
 
 import Home from './site/Home';
 
+
 import Auth from './components/auth/Auth'
 master
+
 import PlantsIndex from './components/plants/PlantsIndex';
 // import GardenIndex from './components/gardens/GardenIndex'
 
@@ -61,10 +63,11 @@ function App() {
   
 
       <Footer /> */}
+      <Auth updateToken={updateToken}/>
       <PlantsIndex />
 
       {/* <GardenIndex /> */}
-master
+
     </div>
   );
 }
