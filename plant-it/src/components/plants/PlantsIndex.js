@@ -1,36 +1,76 @@
 import React, {useState, useEffect} from 'react';
-import DisplayPlants from './plant/Plant';
-import CreatePlant from './createPlant/CreatePlant'
+import DisplayPlants from './plantTable/PlantTable';
+import CreatePlant from './createPlant/CreatePlant';
+import PlantView from './PlantView';
+import {Container, Row, Col} from 'reactstrap';
 
-const Plants = (props) => {
+const PlantsIndex = (props) => {
     
     const [plants, setPlants] = useState([]);
-    const [createPlant, setCreatePlant] = useState(false);
+    const [viewActive, setViewActive] = useState(false);
+    // const [createPlant, setCreatePlant] = useState(false);
+    const [plantToView, setPlantToView] = useState([]);
+    // const [gardenActive, setGardenActive] = useState(false);
+    // const [plantToGarden, setPlantToGarden] = useState([]);
+    console.log(plants);
 
-    fetch (url, {
-        method: 'GET',
-        headers: new Headers({
-            'Content-Type': 'application/json',
-            'Authorization': props.sessionToken,
+    const fetchPlants = () =>{
+        fetch ('http://wd85-plant-it.herokuapp.com/plant/all', {
+            method: 'GET',
+            headers: new Headers ({
+                'Content-Type': 'application/json'
+            }),
         })
-        .then(res => res.json())
-        .then(json => setPlants(json))
-    })
+            .then(res => res.json())
+            .then((plantData) =>{
+                setPlants(plantData)
+                console.log(plants, plantData);
+            }) 
+    }
+    // view functions
+    const viewPlant = (plant) =>{
+        setPlantToView(plant);
+        console.log(plant);
+    }
+    const viewOn = () =>{
+        setViewActive(true)
+    }
+    const viewOff = () =>{
+        setViewActive(false)
+    }
+
+    // add to garden functions (ignore this for now)
+    // const addToGarden = (plant) =>{
+    //     setPlantToGarden(plant);
+    // }
+    // const
 
     useEffect(() => {
         fetchPlants();
-    }, [createPlants])
+        console.log(`plants: ${plants}, viewPlant: ${viewPlant}, viewOn: ${viewOn}, fetchPlants: ${fetchPlants}`);
+    }, [])
 
-    const buttonHandler = () => setCreatePlant(true);
+    return(
+        <Container>
+            <Row>
+                <Col md='3'>
+                    <CreatePlant fetchPlants={fetchPlants} token={props.token}/>
+                </Col>
+                <Col md='9'>
+                    <DisplayPlants plants={plants} viewPlant={viewPlant} plantToView={plantToView} viewOn={viewOn} fetchPlants={fetchPlants} token={props.token}/>
+                </Col>
+                {viewActive ? <PlantView plantToView={plantToView} viewOff={viewOff} token={props.token} fetchPlants={fetchPlants} /> : <></>}
+            </Row>
+        </Container>
+    )
+    // const buttonHandler = () => setCreatePlant(true);
 
-    //MAIN GARDEN
-    
-    <>
-        {createPlant ? <CreatePlant setCreatePlant={setCreatePlant} sessionToken={props.sessionToken}/> : null}
-        {!createPlant ? <Button onClick={buttonHandler}>Plant It!</Button> : null}
-    </> 
+
+    // <>
+    //     {createPlant ? <CreatePlant setCreatePlant={setCreatePlant} sessionToken={props.sessionToken}/> : null}
+    //     {!createPlant ? <Button onClick={buttonHandler}>Plant It!</Button> : null}
+    // </> 
 
     //!!! Need to add table above to display plants. Style components or bootstrap table --SC
 }
-
-export default Plants;
+export default PlantsIndex;
