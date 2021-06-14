@@ -5,14 +5,16 @@ import Sitebar from './site/Sitebar';
 import Login from '../src/components/auth/Login';
 import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
+
 import SearchBar from './components/searchBar/SearchBar';
 import SearchPlants from './components/searchBar/Search';
 
 import Home from './site/Home';
-<<<<<<< HEAD
-=======
 
->>>>>>> a33dd18d3b473a0452cfdc8d15154a93e30e9335
+
+import Auth from './components/auth/Auth'
+master
+
 import PlantsIndex from './components/plants/PlantsIndex';
 // import GardenIndex from './components/gardens/GardenIndex'
 
@@ -65,9 +67,6 @@ function App() {
       <PlantsIndex />
 
       {/* <GardenIndex /> */}
-
-
-
 
     </div>
   );
