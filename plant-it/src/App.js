@@ -5,7 +5,9 @@ import Sitebar from './site/Sitebar';
 import Login from '../src/components/auth/Login';
 import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
+import Auth from './components/auth/Auth'
 import PlantsIndex from './components/plants/PlantsIndex';
+// import GardenIndex from './components/gardens/GardenIndex'
 
 function App() {
   const [sessionToken, setSessionToken] = useState('');
@@ -39,6 +41,7 @@ function App() {
       <br></br>
       <Footer /> */}
       <PlantsIndex />
+      {/* <GardenIndex /> */}
     </div>
   );
 }
