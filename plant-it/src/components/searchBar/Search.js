@@ -17,7 +17,7 @@ const SearchPlants = () => {
     };
     
 
-    [plants, setPants] = useState([]);
+    const [plants, setPlants] = useState([]);
     let url = 'http://wd85-plant-it.herokuapp.com/garden/plantName';
 
     fetch(url) 
