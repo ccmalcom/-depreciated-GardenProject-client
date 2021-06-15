@@ -41,7 +41,6 @@ function App() {
 
       <Sitebar />
       <Home />
-      <SearchPlants />
       {/* <Footer /> */}
       
       {/* <Login /> */}
@@ -51,14 +50,15 @@ function App() {
       <Login />
       <Header />
       <br></br>
-
+      
       <SearchPlants />
       <br></br>
       <Footer />
-  
-
-      <Footer /> */}
+      
+      
+    <Footer /> */}
       <Auth updateToken={updateToken}/>
+      <SearchPlants />
       <PlantsIndex token={sessionToken}/>
 
       {/* <GardenIndex /> */}
