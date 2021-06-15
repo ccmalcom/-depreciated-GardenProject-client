@@ -26,7 +26,7 @@ function App() {
   const updateToken = (newToken) =>{ 
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
-    console.log(sessionToken);
+    
   }
 
   const clearToken =()=>{
@@ -39,6 +39,7 @@ function App() {
   // }
   return (
     <div className="App">
+      {console.log(sessionToken)}
 
       <Sitebar />
       <Home />
@@ -50,7 +51,7 @@ function App() {
       {/* <Header /> */}
       {/* <Login /> */}
 
-      <Login />
+      
 
 
       {/* <Sitebar />

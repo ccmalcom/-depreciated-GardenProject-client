@@ -11,7 +11,7 @@ const GardenIndex = (props) => {
     const [viewActive, setViewActive] = useState(false);
     const [plantToView, setPlantToView] = useState([]);
     const [plantName, setPlantName] = useState(' ')
-    let baseURL = 'http://wd85-plant-it.herokuapp.com/garden/all';
+    let baseURL = 'http://wd85-plant-it2.herokuapp.com/garden/all';
 
     const fetchGarden = () => {
         fetch(baseURL, {
