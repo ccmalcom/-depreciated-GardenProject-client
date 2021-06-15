@@ -1,6 +1,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "Rosemary",
         "typeOfPlant": "herb",
         "lightingNeeds": "6-8hrs of sunlight/day",
@@ -13,6 +14,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "GreenBeans",
         "typeOfPlant": "Annual vegetable",
         "lightingNeeds": "6-8 hrs of sunlight/day",
@@ -23,8 +25,10 @@
 },
 
 {
+ 
     "plant":
     {
+        "creator": 5,
         "plantName": "MiniSweetPeppers",
         "typeOfPlant": "Fruit",
         "lightingNeeds": "Full sun (6-8 hours)",
@@ -37,6 +41,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "Coneflower",
         "typeOfPlant": "Echinacea",
         "lightingNeeds": "full-sun to part-shade",
@@ -49,6 +54,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "ButterflyBush",
         "typeOfPlant": "Perennial",
         "lightingNeeds": "Full Sun",
@@ -61,6 +67,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "Basil",
         "typeOfPlant": "Herb, annual",
         "lightingNeeds": "Full sun",
@@ -73,6 +80,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "Peony",
         "typeOfPlant": "Perennial",
         "lightingNeeds": "Full sun",
@@ -85,6 +93,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "Hibiscus",
         "typeOfPlant": "Perennial, shrub",
         "lightingNeeds": "Full Sun",
@@ -109,6 +118,7 @@
 {
     "plant":
     {
+        "creator": 5,
         "plantName": "Watermelon",
         "typeOfPlant": "Fruit",
         "lightingNeeds": "Full sun",
