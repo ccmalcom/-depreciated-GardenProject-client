@@ -24,27 +24,13 @@
   
   
 }
-/*Auth*/
-.Login {
-  height: 59vh;
-  margin-left: 25px;
-  width: 38vw;
-  background-color: lightgreen;
-  padding: 25px;
-  border-radius: 30px;
-  font-size: 20px;
-  font-family: 'Yeseva One';
-  color: white;
-}
+
 
 .register{
   font-size: 20px;
 }
 
-button{
-  width: 34vw;
-  align-content: center;
-}
+
 
 /* Footer */
 footer {

@@ -12,7 +12,7 @@ const Register = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('', {
+        fetch('http://wd85-plant-it.herokuapp.com/user/register', {
             method: 'POST',
             body: JSON.stringify({user:{firstName: firstName, lastName: lastName, emailAddress: emailAddress, password: password, zipCode: zipCode}}),
             headers: new Headers({
@@ -27,7 +27,7 @@ const Register = (props) => {
     }
 
     return (
-        <div>
+        <div className='Register'>
             <h1>Register</h1>
             <Form onSubmit={ handleSubmit }>
                 <FormGroup>
@@ -50,7 +50,7 @@ const Register = (props) => {
                     <Label htmlFor='zipCode'>Zipcode</Label>
                     <Input onChange={(e) => setZipCode(e.target.value)} name='zipCode' value={zipCode} />
                 </FormGroup>
-                
+                <br></br>
                 <Button type='submit'>Sign Up</Button>
             </Form>
         </div>

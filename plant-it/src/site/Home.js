@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal';
 import img from '../assets/garden.jpg';
+import ModalExample from '../components/auth/Modal';
 
 const Wrapper = styled.div`
     background-image: url(${img});
@@ -40,16 +41,7 @@ const Div = styled.div`
     margin-left: 575px;
     font-family: 'Yeseva One';
 `
-const Button = styled.button`
-    border: none;
-    margin-left: 615px;
-    height: 75px;
-    border-radius: 15px;
-    background-color: rgb(65, 105, 65, 0.9);
-    font-family: 'Yeseva One';
-    font-size: 22px;
-    color: white;
-    `
+
 
 const Home = () => {
     return (
@@ -64,7 +56,9 @@ const Home = () => {
                 <Paragraph>
                 <p>Search for plants below. If you can't find what you're looking for, add it to the list! Create an account (or login) to accesss MyGarden, where you can add plants from the index to your very own virtual garden to keep track of everything you grow and how to grow it.</p>
                 </Paragraph>
-                <Button>Start Planting!</Button>
+                
+                <ModalExample />
+                
                 
             </Fade>
         </Wrapper>
