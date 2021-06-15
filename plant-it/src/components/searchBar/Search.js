@@ -1,19 +1,6 @@
-// import React, {useState} from 'react';
-// import { BrowserRouter as Router } from 'react-router-dom';
-// import SearchBar from './SearchBar';
-
-
-
-// const SearchPlants = () => {
-
-//     const filterPlants = (plants, query) => {
-//         if (!query) {
-//             return plants;
-//         }
-
-
-
-
+import React, {useState} from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 
 const SearchPlants = () => {
@@ -83,7 +70,7 @@ const SearchPlants = () => {
                 
             </div>
             <>
-            <h2>Plant Index</h2>
+            <h2>Search Results</h2>
             <table>
                 <thead>
                     <tr>
