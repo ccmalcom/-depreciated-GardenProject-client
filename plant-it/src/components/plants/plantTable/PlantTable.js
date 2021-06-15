@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import ViewModal from '../PlantView';
 // import './Plant.css'
-import PlantView from '../PlantView';
 
 const DisplayPlants = (props) => {
 
