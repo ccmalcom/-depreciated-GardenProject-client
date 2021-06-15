@@ -21,7 +21,7 @@ const SearchPlants = () => {
     
     const fetchPlants = (e) => {
         e.preventDefault();
-        fetch('http://wd85-plant-it.herokuapp.com/plant/all', {
+        fetch('http://wd85-plant-it2.herokuapp.com/plant/all', {
             method: 'GET',
             headers: new Headers ({
                 'Content-Type': 'application/json',

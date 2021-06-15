@@ -42,6 +42,7 @@ function App() {
   return (
     <div className="App">
       {console.log(sessionToken)}
+
       <Sitebar />
       <Home />
       
@@ -53,7 +54,7 @@ function App() {
       {/* <Login /> */}
       <ModalExample />
 
-    
+
 
 
       {/* <Sitebar />
