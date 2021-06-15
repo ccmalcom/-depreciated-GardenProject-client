@@ -7,7 +7,7 @@ import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
 import SearchBar from './components/searchBar/SearchBar';
 import SearchPlants from './components/searchBar/Search';
-//import GardenIndex from './components/gardens/GardenIndex'
+import GardenIndex from './components/gardens/GardenIndex'
 import Home from './site/Home';
 
 import PlantsIndex from './components/plants/PlantsIndex';

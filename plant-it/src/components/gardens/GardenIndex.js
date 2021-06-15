@@ -15,7 +15,7 @@
 //     //const [plantToGarden, setPlantToGarden] = useState([]);
 
 
-//     const fetchGarden = () => {
+//     // const fetchGarden = () => {
 //         fetch('http://wd85-plant-it.herokuapp.com/garden/all', {
 //             method: 'GET',
 //             headers: new Headers({
@@ -23,9 +23,10 @@
 //             }),
 //         })
 //             .then(res => res.json())
-//             .then((gardenData) => {
-//                 setGarden(gardenData)
-//                 console.log(garden, gardenData);
+//             console.log(res);
+//             .then((Data) => {
+//                 setGarden(Data)
+//                 console.log(data);
 //             })
 //     }
 //     //view functions
@@ -60,7 +61,7 @@
 //                 </Row>
 //             </Container>
 //         )
-//         }
+//         //}
     
 //         // const buttonHandler = () => setCreatePlant(true);
 

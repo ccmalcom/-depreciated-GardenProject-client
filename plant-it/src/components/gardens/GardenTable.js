@@ -5,8 +5,8 @@
 // const GardenTable = (props) => {
 
 
-//     const deleteGarden = (garden) => {
-//         fetch(`http://wd85-plant-it.herokuapp.com/garden/${plantName}`, {
+//     const deleteGarden = () => {
+//         fetch(`http://wd85-plant-it.herokuapp.com/garden/all`, {
 //             method: 'Delete',
 //             headers: new Headers({
 //                 'Content-Type': 'application/json',
