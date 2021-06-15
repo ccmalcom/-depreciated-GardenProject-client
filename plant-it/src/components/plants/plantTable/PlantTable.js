@@ -13,7 +13,7 @@ const DisplayPlants = (props) => {
     const AddToGarden = (plant) =>{
         fetch(`http://wd85-plant-it.herokuapp.com/garden/create`, {
             method: 'CREATE',
-            body: JSON.stringify({plantName: plantName, typeOfPlant: typeOfPlant, lightingNeeds: lightingNeeds, waterNeeds: lightingNeeds, waterNeeds: waterNeeds, fertilizerNeeds: fertilizerNeeds, notes: notes}),
+            body: JSON.stringify({plantName: plantName, typeOfPlant: typeOfPlant, lightingNeeds: lightingNeeds, waterNeeds: waterNeeds, fertilizerNeeds: fertilizerNeeds, notes: notes}),
             headers: new Headers ({
                 'Content-Type': 'application/json',
                 'Authorization' : props.token
