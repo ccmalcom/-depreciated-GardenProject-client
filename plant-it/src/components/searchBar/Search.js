@@ -11,6 +11,11 @@
 //             return plants;
 //         }
 
+
+
+
+
+
 const SearchPlants = () => {
     const [plants, setPlants] = useState([]);
     
@@ -99,3 +104,4 @@ const SearchPlants = () => {
 }
 
 export default SearchPlants;
+
