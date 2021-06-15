@@ -4,6 +4,7 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const Register = (props) => {
     const [firstName, setFirstName] = useState('');
+    
     const [lastName, setLastName] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
@@ -12,7 +13,8 @@ const Register = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://wd85-plant-it.herokuapp.com/user/register', {
+        fetch('https:wd85-plant-it2.herokuapp.com/user/register', {
+
             method: 'POST',
             body: JSON.stringify({user:{firstName: firstName, lastName: lastName, emailAddress: emailAddress, password: password, zipCode: zipCode}}),
             headers: new Headers({

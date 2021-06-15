@@ -5,6 +5,8 @@ import Sitebar from './site/Sitebar';
 import Login from '../src/components/auth/Login';
 import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
+import ModalExample from './components/auth/Modal';
+
 import SearchBar from './components/searchBar/SearchBar';
 // import SearchPlants from './components/searchBar/Search';
 import Home from './site/Home';
@@ -26,7 +28,7 @@ function App() {
   const updateToken = (newToken) =>{ 
     localStorage.setItem('token', newToken);
     setSessionToken(newToken);
-    console.log(sessionToken);
+    
   }
 
   const clearToken =()=>{
@@ -39,6 +41,7 @@ function App() {
   // }
   return (
     <div className="App">
+      {console.log(sessionToken)}
 
       <Sitebar />
       <Home />
@@ -49,13 +52,14 @@ function App() {
       {/* <Footer /> */}
       {/* <Header /> */}
       {/* <Login /> */}
+      <ModalExample />
 
-      <Login />
+
 
 
       {/* <Sitebar />
       <br></br>
-       <Login />
+
       <Header />
       <br></br>
       

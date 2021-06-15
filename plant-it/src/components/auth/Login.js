@@ -5,6 +5,7 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 /** */
 
 const Login = (props) => {
+    console.log(props);
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
     
@@ -12,13 +13,13 @@ const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://wd85-plant-it.herokuapp.com/user/login', {
+        fetch('https://wd85-plant-it2.herokuapp.com/user/login', {
             method: 'POST',
             body: JSON.stringify(
                 {user:{emailAddress: emailAddress, password: password}}
             ),
             headers: new Headers ({
-                'Content-Type': 'application/json/'
+                'Content-Type': 'application/json'
             })
         }).then(
             (response) => response.json()
