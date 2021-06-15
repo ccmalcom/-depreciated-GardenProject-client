@@ -91,3 +91,4 @@ const SearchPlants = () => {
 }
 
 export default SearchPlants;
+

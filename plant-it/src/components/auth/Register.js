@@ -27,7 +27,7 @@ const Register = (props) => {
     }
 
     return (
-        <div>
+        <div className='Register'>
             <h1>Register</h1>
             <Form onSubmit={ handleSubmit }>
                 <FormGroup>
@@ -50,7 +50,7 @@ const Register = (props) => {
                     <Label htmlFor='zipCode'>Zipcode</Label>
                     <Input onChange={(e) => setZipCode(e.target.value)} name='zipCode' value={zipCode} />
                 </FormGroup>
-                
+                <br></br>
                 <Button type='submit'>Sign Up</Button>
             </Form>
         </div>
