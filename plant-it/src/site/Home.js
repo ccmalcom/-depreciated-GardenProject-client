@@ -62,7 +62,7 @@ const Home = () => {
                 <p>An open-source garden index, stocked by you.</p>
                 </Section>
                 <Paragraph>
-                <p>Search for plants below. If you can't find what you're looking for, add it to the list! Create an account (or login) to accesss MyGarden, where you can add plants from the index to your very own virtual garden to keep track of everything you grow and how to grow it.</p>
+                Search for plants below. If you can't find what you're looking for, add it to the list! Create an account (or login) to access MyGarden, where you can add plants from the index to your very own virtual garden to keep track of everything you grow and how to grow it.
                 </Paragraph>
                 <Button>Start Planting!</Button>
                 
