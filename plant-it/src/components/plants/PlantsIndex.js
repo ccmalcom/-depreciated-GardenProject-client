@@ -1,66 +1,81 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import DisplayPlants from './plantTable/PlantTable';
 import CreatePlant from './createPlant/CreatePlant';
 import PlantView from './PlantView';
-import {Container, Row, Col} from 'reactstrap';
+import AddToGarden from '../gardens/AddToGarden';
+import { Container, Row, Col } from 'reactstrap';
 
 const PlantsIndex = (props) => {
-    
+
     const [plants, setPlants] = useState([]);
     const [viewActive, setViewActive] = useState(false);
-    // const [createPlant, setCreatePlant] = useState(false);
+    const [createActive, setCreateActive] = useState(false);
     const [plantToView, setPlantToView] = useState([]);
-    // const [gardenActive, setGardenActive] = useState(false);
-    // const [plantToGarden, setPlantToGarden] = useState([]);
+    const [gardenModalActive, setGardenModalActive] = useState(false);
+    const [plantToGarden, setPlantToGarden] = useState([]);
     console.log(plants);
-
-    const fetchPlants = () =>{
-        fetch ('http://wd85-plant-it.herokuapp.com/plant/all', {
+    console.log('view active:', viewActive)
+    const fetchPlants = () => {
+        fetch('http://wd85-plant-it.herokuapp.com/plant/all', {
             method: 'GET',
-            headers: new Headers ({
+            headers: new Headers({
                 'Content-Type': 'application/json'
             }),
         })
             .then(res => res.json())
-            .then((plantData) =>{
+            .then((plantData) => {
                 setPlants(plantData)
                 console.log(plants, plantData);
-            }) 
+            })
     }
     // view functions
-    const viewPlant = (plant) =>{
+    const viewPlant = (plant) => {
         setPlantToView(plant);
         console.log(plant);
     }
-    const viewOn = () =>{
+    const viewOn = () => {
         setViewActive(true)
     }
-    const viewOff = () =>{
+    const viewOff = () => {
         setViewActive(false)
     }
 
     // add to garden functions (ignore this for now)
-    // const addToGarden = (plant) =>{
-    //     setPlantToGarden(plant);
-    // }
-    // const
+    const addToGarden = (plant) => {
+        setPlantToGarden(plant);
+    }
+    const gardenModalOn = () => {
+        setGardenModalActive(true)
+    }
+    const gardenModalOff = () => {
+        setGardenModalActive(false)
+    }
+
+    // create functions (plantIt)
+    const createActiveOn = () =>{
+        setCreateActive(true);
+    }
+    const createActiveOff = () =>{
+        setCreateActive(false)
+    }
 
     useEffect(() => {
         fetchPlants();
-        console.log(`plants: ${plants}, viewPlant: ${viewPlant}, viewOn: ${viewOn}, fetchPlants: ${fetchPlants}`);
     }, [])
 
-    return(
+    return (
         <Container>
-            <Row>
-                <Col md='3'>
-                    <CreatePlant fetchPlants={fetchPlants} token={props.token}/>
-                </Col>
-                <Col md='9'>
-                    <DisplayPlants plants={plants} viewPlant={viewPlant} plantToView={plantToView} viewOn={viewOn} fetchPlants={fetchPlants} token={props.token}/>
-                </Col>
-                {viewActive ? <PlantView plantToView={plantToView} viewOff={viewOff} token={props.token} fetchPlants={fetchPlants} /> : <></>}
-            </Row>
+            <div>
+                <button onClick={createActiveOn}>PlantIt!</button>
+                <DisplayPlants plants={plants} viewPlant={viewPlant} viewOn={viewOn} addToGarden={addToGarden} gardenModalOn={gardenModalOn} fetchPlants={fetchPlants} token={props.token} />
+            </div>
+            <div>
+                {viewActive ? <PlantView plantToView={plantToView} viewOff={viewOff} addToGarden={addToGarden} gardenModalOn={gardenModalOn} /> : null}
+
+                {gardenModalActive ? <AddToGarden plantToGarden={plantToGarden} gardenModalOff={gardenModalOff} token={props.token} /> : null}
+
+                {createActive ? <CreatePlant fetchPlants={fetchPlants} token={props.token} createActiveOff={createActiveOff}/> : null }
+            </div>
         </Container>
     )
     // const buttonHandler = () => setCreatePlant(true);
