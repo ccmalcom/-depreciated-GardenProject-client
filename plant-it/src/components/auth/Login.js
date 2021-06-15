@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
+
+/** */
+
 const Login = (props) => {
     const [emailAddress, setEmailAddress] = useState('');
     const [password, setPassword] = useState('');
@@ -38,8 +41,6 @@ const Login = (props) => {
                 </FormGroup>
                 <br></br>
                 <Button type='submit' style={{textAlign: 'center'}}>Login</Button>
-                <p className='register'>Don't have an account? Register now to start adding to your garden!</p>
-                <Button type='submit'>Register</Button>
             </Form>
         </div>
     )
