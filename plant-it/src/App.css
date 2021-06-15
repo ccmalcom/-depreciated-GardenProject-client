@@ -26,6 +26,8 @@
   background-color: rgb(132, 205, 230);
 }
 
+
+
 /*Auth*/
 .Login {
   height: 59vh;
@@ -39,14 +41,12 @@
   color: white;
 }
 
+
 .register{
   font-size: 20px;
 }
 
-button{
-  width: 34vw;
-  align-content: center;
-}
+
 
 /* Footer */
 footer {

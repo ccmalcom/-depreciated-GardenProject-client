@@ -13,6 +13,7 @@ import PlantsIndex from './components/plants/PlantsIndex';
 import GardenIndex from './components/gardens/GardenIndex'
 
 
+
 function App() {
   const [sessionToken, setSessionToken] = useState('');
 
@@ -41,9 +42,16 @@ function App() {
 
       <Sitebar />
       <Home />
-      {/* <Footer /> */}
       
+
+      {/* <Auth /> */}
+      <br></br>
+      {/* <Footer /> */}
+      {/* <Header /> */}
+      {/* <Login /> */}
+
       <Login />
+
 
       {/* <Sitebar />
       <br></br>
