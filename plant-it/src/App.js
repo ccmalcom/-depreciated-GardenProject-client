@@ -41,6 +41,7 @@ function App() {
 
       <Sitebar />
       <Home />
+      <SearchPlants />
       {/* <Footer /> */}
       
       {/* <Login /> */}
