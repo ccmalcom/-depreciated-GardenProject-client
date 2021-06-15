@@ -39,6 +39,17 @@ const SearchPlants = () => {
         });
     };
     
+
+
+    const [plants, setPlants] = useState([]);
+    let url = 'http://wd85-plant-it.herokuapp.com/garden/plantName';
+
+    fetch(url) 
+    .then(res => res.json())
+    .then(data => setPlants(data.response.plants))
+    .catch(err => console.log(err));
+
+
     const {search} = window.location;
     const query = new URLSearchParams(search).get('s');
     const [searchQuery, setSearchQuery] = useState(query || '');
