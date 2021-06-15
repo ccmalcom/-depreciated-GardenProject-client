@@ -5,18 +5,12 @@ import Sitebar from './site/Sitebar';
 import Login from '../src/components/auth/Login';
 import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
-
 import SearchBar from './components/searchBar/SearchBar';
-import SearchPlants from './components/searchBar/Search';
-
+// import SearchPlants from './components/searchBar/Search';
 import Home from './site/Home';
 
-
-import Auth from './components/auth/Auth'
-master
-
 import PlantsIndex from './components/plants/PlantsIndex';
-// import GardenIndex from './components/gardens/GardenIndex'
+import GardenIndex from './components/gardens/GardenIndex'
 
 
 function App() {
@@ -49,24 +43,36 @@ function App() {
       <Home />
       {/* <Footer /> */}
       
-      {/* <Login /> */}
+      <Login />
 
       {/* <Sitebar />
       <br></br>
-      <Login />
+       <Login />
       <Header />
       <br></br>
-
+      
       <SearchPlants />
       <br></br>
       <Footer />
-  
-
-      <Footer /> */}
+      
+      
+    <Footer /> */}
       <Auth updateToken={updateToken}/>
-      <PlantsIndex />
 
-      {/* <GardenIndex /> */}
+      
+      <GardenIndex token={sessionToken}/>
+
+      
+
+
+
+
+
+      {/* <SearchPlants /> */}
+      <PlantsIndex token={sessionToken}/>
+
+      
+
 
     </div>
   );
