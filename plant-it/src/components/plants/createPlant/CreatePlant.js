@@ -1,7 +1,9 @@
 // import { formatMs, FormGroup } from '@material-ui/core';
 import React, { useState } from 'react';
 import './CreatePlant.css';
-import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 const CreatePlant = (props) => {
     const [plantName, setPlantName] = useState('');
@@ -15,9 +17,7 @@ const CreatePlant = (props) => {
     const postPlant = e => {
         e.preventDefault();
 
-        let url = //"http://localhost:4000/plants"
-
-        fetch(url, {
+        fetch('http://wd85-plant-it.herokuapp.com/plant/create', {
             method: 'POST',
             body: JSON.stringify({
                 plantName: plantName,
@@ -43,6 +43,17 @@ const CreatePlant = (props) => {
 
         //! We can change this table to use something other than reactstrap 
         <div>
+            <Modal isOpen={true}
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+            >
+                <ModalHeader>
+                <button onClick={props.createActiveOff}><FontAwesomeIcon icon={faArrowAltCircleLeft} size="3x"/></button>
+                <h3>Details</h3>
+                </ModalHeader>
+            <ModalBody>
             <Form onSubmit={postPlant}>
                 <FormGroup>
                     <Label>Plant Name</Label>
@@ -68,8 +79,10 @@ const CreatePlant = (props) => {
                     <Label>Notes</Label>
                     <Input type='text' value={notes} placeholder='Part of the mint family; smells wonderful!' onChange={(e) => setNotes(e.target.value)} />
                 </FormGroup>
-                <Button type='submit'>Plant it!</Button>
+                <Button type='submit' onClick={()=>{props.createActiveOff(); props.fetchPlants()}}>Plant it!</Button>
             </Form>
+            </ModalBody>
+            </Modal>
         </div>
     )
 }
