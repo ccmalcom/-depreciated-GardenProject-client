@@ -7,9 +7,12 @@ import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
 import ModalExample from './components/auth/Modal';
 
+import SearchBar from './components/searchBar/SearchBar';
+// import SearchPlants from './components/searchBar/Search';
 import Home from './site/Home';
 
 import PlantsIndex from './components/plants/PlantsIndex';
+import GardenIndex from './components/gardens/GardenIndex'
 
 
 
@@ -42,19 +45,46 @@ function App() {
       <Sitebar />
       <Home />
       
-      <Auth />
+
+      {/* <Auth /> */}
       <br></br>
       {/* <Footer /> */}
       {/* <Header /> */}
       {/* <Login /> */}
       <ModalExample />
+
+    
+
+
       {/* <Sitebar />
       <br></br>
-      <Login />
+
       <Header />
       <br></br>
-      <Footer /> */}
-      <PlantsIndex />
+      
+      <SearchPlants />
+      <br></br>
+      <Footer />
+      
+      
+    <Footer /> */}
+      <Auth updateToken={updateToken}/>
+
+      
+      <GardenIndex token={sessionToken}/>
+
+      
+
+
+
+
+
+      {/* <SearchPlants /> */}
+      <PlantsIndex token={sessionToken}/>
+
+      
+
+
     </div>
   );
 }
