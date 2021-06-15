@@ -4,6 +4,8 @@ import CreatePlant from './createPlant/CreatePlant';
 import PlantView from './PlantView';
 import AddToGarden from '../gardens/AddToGarden';
 import { Container, Row, Col } from 'reactstrap';
+import PlantEdit from './plantEdit/PlantEdit';
+import DeletePlant from './DeletePlant';
 
 const PlantsIndex = (props) => {
 
@@ -13,10 +15,14 @@ const PlantsIndex = (props) => {
     const [plantToView, setPlantToView] = useState([]);
     const [gardenModalActive, setGardenModalActive] = useState(false);
     const [plantToGarden, setPlantToGarden] = useState([]);
+    const [editModalActive, setEditModalActive] = useState(false);
+    const [plantToUpdate, setPlantToUpdate] = useState([]);
+    const [deleteModalActive, setDeleteModalActive] = useState(false);
+    const [plantToDelete, setPlantToDelete] = useState([])
     console.log(plants);
     console.log('view active:', viewActive)
     const fetchPlants = () => {
-        fetch('http://wd85-plant-it.herokuapp.com/plant/all', {
+        fetch('http://wd85-plant-it2.herokuapp.com/plant/all', {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json'
@@ -39,7 +45,6 @@ const PlantsIndex = (props) => {
     const viewOff = () => {
         setViewActive(false)
     }
-
     // add to garden functions (ignore this for now)
     const addToGarden = (plant) => {
         setPlantToGarden(plant);
@@ -50,13 +55,32 @@ const PlantsIndex = (props) => {
     const gardenModalOff = () => {
         setGardenModalActive(false)
     }
-
     // create functions (plantIt)
     const createActiveOn = () =>{
         setCreateActive(true);
     }
     const createActiveOff = () =>{
         setCreateActive(false)
+    }
+    // edit functions
+    const editPlant = (plant) =>{
+        setPlantToUpdate(plant);
+    }
+    const editModalOn = () =>{
+        setEditModalActive(true);
+    }
+    const editModalOff = () =>{
+        setEditModalActive(false);
+    }
+    // delete functions
+    const deleteThisPlant = (plant) =>{
+        setPlantToDelete(plant)
+    }
+    const deleteModalOn =()=>{
+        setDeleteModalActive(true)
+    }
+    const deleteModalOff =()=>{
+        setDeleteModalActive(false)
     }
 
     useEffect(() => {
@@ -70,11 +94,15 @@ const PlantsIndex = (props) => {
                 <DisplayPlants plants={plants} viewPlant={viewPlant} viewOn={viewOn} addToGarden={addToGarden} gardenModalOn={gardenModalOn} fetchPlants={fetchPlants} token={props.token} />
             </div>
             <div>
-                {viewActive ? <PlantView plantToView={plantToView} viewOff={viewOff} addToGarden={addToGarden} gardenModalOn={gardenModalOn} /> : null}
+                {viewActive ? <PlantView plantToView={plantToView} viewOff={viewOff} addToGarden={addToGarden} gardenModalOn={gardenModalOn} editPlant={editPlant} editModalOn={editModalOn} fetchPlants={fetchPlants} deleteModalOn={deleteModalOn} deleteThisPlant={deleteThisPlant}/> : null}
 
                 {gardenModalActive ? <AddToGarden plantToGarden={plantToGarden} gardenModalOff={gardenModalOff} token={props.token} /> : null}
 
                 {createActive ? <CreatePlant fetchPlants={fetchPlants} token={props.token} createActiveOff={createActiveOff}/> : null }
+
+                {editModalActive ? <PlantEdit plantToUpdate={plantToUpdate} editModalOff={editModalOff} token={props.token} fetchPlants={fetchPlants} viewOn={viewOn}/>: null}
+
+                {deleteModalActive ? <DeletePlant plantToDelete={plantToDelete} deleteModalOff={deleteModalOff} viewOff={viewOff}/> : null}
             </div>
         </Container>
     )
