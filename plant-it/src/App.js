@@ -5,15 +5,9 @@ import Sitebar from './site/Sitebar';
 import Login from '../src/components/auth/Login';
 import Auth from './components/auth/Auth';
 import Footer from './site/Footer';
-
 import SearchBar from './components/searchBar/SearchBar';
 import SearchPlants from './components/searchBar/Search';
-
 import Home from './site/Home';
-
-
-import Auth from './components/auth/Auth'
-master
 
 import PlantsIndex from './components/plants/PlantsIndex';
 // import GardenIndex from './components/gardens/GardenIndex'
@@ -64,7 +58,7 @@ function App() {
 
       <Footer /> */}
       <Auth updateToken={updateToken}/>
-      <PlantsIndex />
+      <PlantsIndex token={sessionToken}/>
 
       {/* <GardenIndex /> */}
 
