@@ -1,7 +1,15 @@
-import React, {useState} from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import SearchBar from './SearchBar';
+// import React, {useState} from 'react';
+// import { BrowserRouter as Router } from 'react-router-dom';
+// import SearchBar from './SearchBar';
 
+
+
+// const SearchPlants = () => {
+
+//     const filterPlants = (plants, query) => {
+//         if (!query) {
+//             return plants;
+//         }
 
 const SearchPlants = () => {
     const [plants, setPlants] = useState([]);
