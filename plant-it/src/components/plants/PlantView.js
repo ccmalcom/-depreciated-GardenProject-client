@@ -36,9 +36,10 @@ function PlantView(props) {
             </dl>
         </ModalBody>
         <ModalFooter>
-        <button>Edit Details</button>
+            {/* {props.token.user.id === props.plantToView.creator ? console.log('yes!') : console.log('No!')} */}
+        <button onClick={()=>{props.editModalOn(); props.editPlant(props.plantToView); props.viewOff()}}>Edit Details</button>
         <button onClick={()=>{props.gardenModalOn(); props.addToGarden(props.plantToView); props.viewOff()}}>MyGarden <b>+</b></button>
-        <button>Delete</button>
+        <button onClick={()=>{props.deleteModalOn(); props.deleteThisPlant(props.plantToView); props.viewOff()}}>Delete</button>
         </ModalFooter>
     </Modal>
     );
