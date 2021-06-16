@@ -5,12 +5,16 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row } from 'reactstrap';
 import GardenTable from './GardenTable';
 import GardenView from './GardenView';
+import GardenEdit from './GardenEdit';
 
 const GardenIndex = (props) => {
 
     const [plants, setPlants] = useState([]);
     const [viewActive, setViewActive] = useState(false);
     const [plantToView, setPlantToView] = useState([]);
+    const [editModalActive, setEditModalActive] = useState(false);
+
+
     
     let baseURL = 'https://wd85-plant-it2.herokuapp.com/garden/all';
 
@@ -43,8 +47,6 @@ const viewOff = () => {
     setViewActive(false)
 }
 
-
-
 // useEffect(() => {
     // fetchGarden();
 // }, [])
@@ -59,7 +61,8 @@ return (
             {/* {viewActive ? <GardenView plantToView={plantToView} viewOff={viewOff} token={props.token} fetchGarden={fetchGarden} /> : <></>} */}
         </div>
     <div>
-        {viewActive ? <GardenView viewOff={viewOff} plantToView={plantToView}/> : null}
+        {viewActive ? <GardenView fetchGarden={fetchGarden} token={props.token} viewOff={viewOff} plantToView={plantToView} setEditModalActive={setEditModalActive}/> : null}
+        {editModalActive ? <GardenEdit token={props.token} fetchGarden={fetchGarden} plantToView={plantToView} setEditModalActive={setEditModalActive}/>: null }
     </div>
     </Container>
     </div>
