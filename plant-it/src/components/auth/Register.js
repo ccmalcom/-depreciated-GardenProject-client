@@ -14,7 +14,7 @@ const Register = (props) => {
         e.preventDefault();
 
 
-        fetch('http://wd85-plant-it2.herokuapp.com/user/register', {
+    
 
         fetch('https://wd85-plant-it2.herokuapp.com/user/register', {
 

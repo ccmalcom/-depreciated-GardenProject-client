@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Fade from 'react-reveal';
 import img from '../assets/garden.jpg';
-import ModalExample from '../components/auth/Modal';
+
 
 const Wrapper = styled.div`
     background-image: url(${img});
@@ -56,9 +56,6 @@ const Home = () => {
                 <Paragraph>
                 Search for plants below. If you can't find what you're looking for, add it to the list! Create an account (or login) to access MyGarden, where you can add plants from the index to your very own virtual garden to keep track of everything you grow and how to grow it.
                 </Paragraph>
-                
-                <ModalExample />
-                
                 
             </Fade>
         </Wrapper>
