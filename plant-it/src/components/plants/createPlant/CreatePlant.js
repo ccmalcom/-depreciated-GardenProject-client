@@ -29,11 +29,11 @@ const CreatePlant = (props) => {
             }),
             headers: new Headers({
                 'Content-Type': 'application/json',
-                'Authorization': props.sessionToken
+                'Authorization': props.token
             })
         })
         .then(res => console.log(res))
-        .then(props.fetchPlants())
+        .then(()=>{props.fetchPlants()})
         props.createActiveOff();
     }
 

@@ -14,6 +14,7 @@ const DeletePlant = (props) =>{
             })
         })
         .then(res => console.log(res))
+        .then(() =>{props.fetchPlants()})
     }
 
 
@@ -26,7 +27,11 @@ const DeletePlant = (props) =>{
         aria-labelledby="contained-modal-title-vcenter"
         centered
         >
-            {!buttonClicked ? <button onClick={()=>{setButtonClick(true); deleteFetch()}}>Are you sure?</button> :
+            {!buttonClicked ? <div>
+                <button onClick={()=>{setButtonClick(true); deleteFetch()}}>Are you sure?</button>
+                <button onClick={props.deleteModalOff}>Cancel</button> 
+                </div>
+                :
             <>
             <ModalHeader>
                 <h3>Plant deleted!</h3>

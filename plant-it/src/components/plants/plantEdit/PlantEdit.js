@@ -24,7 +24,7 @@ const PlantEdit = (props) => {
             })
         })
         .then(res => console.log(res))
-        .then(props.fetchPlants())
+        .then(()=>{props.fetchPlants()})
     };
 
     return (
