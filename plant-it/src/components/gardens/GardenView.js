@@ -51,9 +51,9 @@ function GardenView(props) {
         </ModalBody>
         <ModalFooter>
             
-        <button onClick={()=>{ props.editModalOn(); props.editPlant(props.plantToView); props.viewOff()}}>Edit Notes</button>
+        <button onClick={()=>{ props.setEditModalActive(true); props.viewOff()}}>Edit Notes</button>
         {/* props.deleteModalOn() props.deleteThisPlant(props.plantToView)*/}
-        <button onClick={()=>{ props.viewOff()}}>Delete</button>
+        <button onClick={()=>{ props.viewOff(); deleteGarden()}}>Delete</button>
         </ModalFooter>
     </Modal>
     );
