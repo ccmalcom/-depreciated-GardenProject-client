@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 //import CreatePlant from './createPlant/CreatePlant';
 //import PlantView from './PlantView';
 import { Container, Row } from 'reactstrap';
-import GardenTable from './GardenTable'
+import GardenTable from './GardenTable';
+import GardenView from './GardenView';
 
 const GardenIndex = (props) => {
 
@@ -24,7 +25,7 @@ const GardenIndex = (props) => {
             .then((res) => res.json())
             .then((plantData) => {
                 setPlants(plantData)
-                console.log(plants, plantData);
+                console.log('plants:',plants, plantData);
             })
     }
 
@@ -33,6 +34,7 @@ const GardenIndex = (props) => {
     //view functions
     const viewPlant = (plant) => {
         setPlantToView(plant);
+        console.log(plant);
     }
     const viewOn = () => {
     setViewActive(true)
@@ -43,18 +45,24 @@ const viewOff = () => {
 
 
 
-useEffect(() => {
-    fetchGarden();
-}, [])
+// useEffect(() => {
+    // fetchGarden();
+// }, [])
 
 return (
+<div>
+    <button onClick={fetchGarden}>MyGarden</button>
     <Container>
-        <Row>
-            <GardenTable plants={plants} viewPlant={viewPlant} viewOn={viewOn} fetchGarden={fetchGarden} token={props.token} />
+        <div>
+            <GardenTable plants={plants} plantToView={plantToView} viewPlant={viewPlant} viewOn={viewOn} fetchGarden={fetchGarden} token={props.token} />
 
             {/* {viewActive ? <GardenView plantToView={plantToView} viewOff={viewOff} token={props.token} fetchGarden={fetchGarden} /> : <></>} */}
-        </Row>
+        </div>
+    <div>
+        {viewActive ? <GardenView viewOff={viewOff} plantToView={plantToView}/> : null}
+    </div>
     </Container>
+    </div>
 )
 }
 
