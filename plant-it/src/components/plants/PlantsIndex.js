@@ -102,7 +102,7 @@ const PlantsIndex = (props) => {
 
                 {editModalActive ? <PlantEdit plantToUpdate={plantToUpdate} editModalOff={editModalOff} token={props.token} fetchPlants={fetchPlants} viewOn={viewOn}/>: null}
 
-                {deleteModalActive ? <DeletePlant plantToDelete={plantToDelete} deleteModalOff={deleteModalOff} viewOff={viewOff}/> : null}
+                {deleteModalActive ? <DeletePlant plantToDelete={plantToDelete} deleteModalOff={deleteModalOff} viewOff={viewOff} token={props.token} fetchPlants={fetchPlants}/> : null}
             </div>
         </Container>
     )

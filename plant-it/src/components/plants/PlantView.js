@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 function PlantView(props) {
+    
     return (
     <Modal isOpen={true}
     {...props}
