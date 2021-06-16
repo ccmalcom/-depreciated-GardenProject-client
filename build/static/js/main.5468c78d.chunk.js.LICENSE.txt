@@ -1,0 +1,3 @@
+//! We can change this table to use something other than reactstrap 
+
+//!!! Need to add table above to display plants. Style components or bootstrap table --SC
