@@ -6,15 +6,15 @@ const GardenTable = (props) => {
 
 
     // const deleteGarden = () => {
-    //     fetch(`http://wd85-plant-it.herokuapp.com/garden/${plantName}`, {
-    //         method: 'Delete',
-    //         headers: new Headers({
-    //             'Content-Type': 'application/json',
-    //             'Authorization': props.token
-    //         })
-    //     })
-    //             .then(() => props.fetchGarden())
-    //     }
+        // // fetch(`http://wd85-plant-it.herokuapp.com/garden/${plantName}`, {
+        //     method: 'Delete',
+        //     headers: new Headers({
+        //         'Content-Type': 'application/json',
+        //         'Authorization': props.token
+        //     })
+        // })
+        //         .then(() => props.fetchGarden())
+        // // }
 
 
 
