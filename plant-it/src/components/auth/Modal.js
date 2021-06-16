@@ -34,13 +34,13 @@ const ModalExample = (props) => {
         
         <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalBody>
-        <Login />
+        <Login updateToken={props.updateToken} />
         <br />
         <Button onClick={toggleNested}>Register Now!</Button>
         <Modal isOpen={nestedModal} toggle={toggleNested} onClosed={closeAll ? toggle : undefined}>
             <ModalHeader>Register now to start your garden!</ModalHeader>
             <ModalBody>
-                <Register />
+            <Register updateToken={props.updateToken} />
             </ModalBody>
             <ModalFooter>
                 <Button color="primary" onClick={toggleNested}>Already have an account? Back to Login</Button>

@@ -12,6 +12,8 @@ const Register = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+
         fetch('https://wd85-plant-it2.herokuapp.com/user/register', {
             method: 'POST',
             body: JSON.stringify({user:{firstName: firstName, lastName: lastName, emailAddress: emailAddress, password: password, zipCode: zipCode}}),
