@@ -16,8 +16,8 @@ const CreatePlant = (props) => {
 
     const postPlant = e => {
         e.preventDefault();
-
-        fetch('http://wd85-plant-it.herokuapp.com/plant/create', {
+        // ! getting no response at all 
+        fetch('https://wd85-plant-it2.herokuapp.com/plant/create', {
             method: 'POST',
             body: JSON.stringify({
                 plantName: plantName,
@@ -32,11 +32,9 @@ const CreatePlant = (props) => {
                 'Authorization': props.sessionToken
             })
         })
-        .then(res => res.json())
-        .then(json => {
-            console.log(json);
-            props.setCreatePlant(false);
-        })
+        .then(res => console.log(res))
+        .then(props.fetchPlants())
+        props.createActiveOff();
     }
 
     return (
@@ -79,7 +77,7 @@ const CreatePlant = (props) => {
                     <Label>Notes</Label>
                     <Input type='text' value={notes} placeholder='Part of the mint family; smells wonderful!' onChange={(e) => setNotes(e.target.value)} />
                 </FormGroup>
-                <Button type='submit' onClick={()=>{props.createActiveOff(); props.fetchPlants()}}>Plant it!</Button>
+                <Button type='submit'>Plant it!</Button>
             </Form>
             </ModalBody>
             </Modal>

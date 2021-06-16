@@ -13,7 +13,7 @@ const AddToGarden = (props) =>{
     const notes = props.plantToGarden.notes
 
     const sendToGarden = () =>{
-        fetch(`http://wd85-plant-it.herokuapp.com/garden/create`, {
+        fetch(`http://wd85-plant-it2.herokuapp.com/garden/create`, {
             method: 'POST',
             body: JSON.stringify({plantName: plantName, typeOfPlant: typeOfPlant, lightingNeeds: lightingNeeds, waterNeeds: waterNeeds, fertilizerNeeds: fertilizerNeeds, notes: notes}),
             headers: new Headers ({
